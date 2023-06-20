@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  python_template:
+    image: "python-template:latest"
+    build:
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace
+    env_file:
+      - .env
+#    environment:
+#      PYTHONPATH: src
+    stdin_open: true
+    tty: true

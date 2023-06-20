@@ -1,0 +1,38 @@
+{
+	"name": "Python3",
+	// docker-composeを使う場合の設定
+	//"dockerComposeFile": "docker-compose.yml",
+	//"service": "python_template",
+	// docker-composeを使わない場合の設定
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	// gitリポジトリがなくてもマウントできるように
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+	],
+	"workspaceFolder": "/workspace",
+	// 環境変数設定。envファイルを使う場合は、"runArgs": ["--env-file",".devcontainer/devcontainer.env"]で
+	// ファイルを指定するか、docker-composeを使う。
+	// https://code.visualstudio.com/docs/remote/containers-advanced#_adding-environment-variables
+	"remoteEnv": {
+		"PYTHONPATH": "src",
+	},
+	"settings": {
+		"python.showStartPage": false,
+		"terminal.integrated.defaultProfile.linux": "/bin/bash",
+		"python.languageServer": "Pylance",
+		"workbench.editor.enablePreview": false,
+	},
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"njpwerner.autodocstring",
+		"donjayamanne.githistory",
+		"github.vscode-pull-request-github",
+		"formulahendry.code-runner",
+		"njqdev.vscode-python-typehint",
+		"ninoseki.vscode-pylens",
+	],
+	"postCreateCommand": "bash /workspace/.devcontainer/init.sh"
+}
