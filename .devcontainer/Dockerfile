@@ -1,5 +1,5 @@
 # Pythonのバージョンを変える場合はイメージを変更する
-FROM python:3.9-buster
+FROM kei198403/mecab-neologd-py3:3.11
 
 USER root
 
@@ -13,9 +13,12 @@ RUN groupadd -g 1000 developer && \
     echo 'Defaults visiblepw'               >> /etc/sudoers && \
     echo 'vscode ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+# /appを/workspace/appへのシンボリックリンクとして作成
 RUN \
     mkdir -p /workspace/.venv \
-    && chown vscode:developer -R /workspace
+    && mkdir -p /workspace/app \
+    && chown vscode:developer -R /workspace \
+    && ln -s /workspace/app /app
 
 USER vscode
 
@@ -27,3 +30,11 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install poetry
 
 # 現在のプロジェクトディレクトリの下にvenv環境を作る。.venvディレクトリができる。
 RUN poetry config virtualenvs.in-project true
+# virtualenvでのsys.pathにシステムのsite-packageを追加する
+RUN poetry config virtualenvs.options.system-site-packages true
+# プロジェクトディレクトリ直下の.venvにdocker環境へのシンボリックリンクが存在していると
+# Dev Containerが「EACCES: permission denied」で起動しなくなるので仮想環境をコピーするようにする
+RUN poetry config virtualenvs.options.always-copy true
+
+ENV LANG ja_JP.UTF-8
+ENV TZ Asia/Tokyo

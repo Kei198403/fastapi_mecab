@@ -1,18 +1,27 @@
 [tool.poetry]
-name = "python-template"
+name = "fastapi-mecab"
 version = "0.1.0"
 description = ""
 authors = ["Kei198403 <74121135+Kei198403@users.noreply.github.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
+# MeCabはインストール済みの前提
+#mecab-python3 = "^1.0.6"
+# CaboChaはインストール済みの前提
+#cabocha-python = "^0.69"
+fastapi = "^0.97.0"
+pydantic = "^1.10.9"
+uvicorn = "^0.22.0"
+gunicorn = "^20.1.0"
 
-[tool.poetry.dev-dependencies]
-flake8 = "^3.9.1"
-mypy = "^0.812"
-autopep8 = "^1.5.7"
-pylint = "^2.8.2"
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+mypy = "^1.4.0"
+pylint = "^2.17.4"
+flake8 = "^6.0.0"
+ipykernel = "^6.23.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
