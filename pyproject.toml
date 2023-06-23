@@ -22,6 +22,7 @@ mypy = "^1.4.0"
 pylint = "^2.17.4"
 flake8 = "^6.0.0"
 ipykernel = "^6.23.2"
+git-changelog = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

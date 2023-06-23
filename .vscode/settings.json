@@ -6,6 +6,7 @@
         "reportGeneralTypeIssues": "information", // 型の警告を無効化。SQLAlchemyの型チェックはmypyに任せる。その場合、SQLAlchemy用プラグインを有効化すること。
         "reportOptionalMemberAccess": "none" // メンバーへのアクセスの警告を無効化。Noneにメソッドが無いというような警告を無視。
     },
+    "python.analysis.typeCheckingMode": "basic",
     "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
     "[python]": {
         "editor.tabSize": 4,
@@ -79,5 +80,5 @@
     "[shellscript]": {
         "files.eol": "\n",
         "editor.formatOnSave": false,
-    },
+    }
 }

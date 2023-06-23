@@ -24,7 +24,6 @@ WORKDIR /app
 
 ENV PYTHONPATH=/app
 ENV PRE_START_PATH=/prestart.sh
-ENV PORT=8001
 
 # Run the start script, it will check for an /app/prestart.sh script (e.g. for migrations)
 # And then will start Gunicorn with Uvicorn

@@ -49,13 +49,16 @@ venv環境をリセットする場合は、.venvを削除してコンテナを�
 
 - feat: 新しい機能
 - fix: バグの修正
-- docs: ドキュメントのみの変更
+- doc: ドキュメントのみの変更
 - style: 空白、フォーマット、セミコロン追加など
 - refactor: 仕様に影響がないコード改善(リファクタ)
 - perf: パフォーマンス向上関連
 - test: テスト関連
 - chore: ビルド、補助ツール、ライブラリ関連
+- deps: 非推奨へ変更
+- revert: 切り戻し
 
+参考：https://pypi.org/project/git-changelog/
 参考：https://qiita.com/numanomanu/items/45dd285b286a1f7280ed
 
 # Poetryコマンドリファレンス
