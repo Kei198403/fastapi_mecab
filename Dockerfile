@@ -14,7 +14,7 @@ RUN poetry install --no-root --without=dev --no-cache
 COPY ./gunicorn_conf.py /gunicorn_conf.py
 COPY ./server/start.sh /start.sh
 COPY ./server/prestart.sh /prestart.sh
-RUN set -eux \
+RUN set -eux; \
     chmod +x /start.sh; \
     chmod +x /prestart.sh; 
 
