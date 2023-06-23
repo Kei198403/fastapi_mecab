@@ -22,3 +22,6 @@ update:
 changelog:
 	poetry version
 	git-changelog -o CHANGELOG.md --commit-style angular -s feat,fix,doc,style,refactor,perf,test,chore,deps,revert
+
+push-tags:
+	git push origin --tags
