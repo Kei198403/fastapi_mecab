@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 <small>[Compare with first commit](https://github.com/Kei198403/fastapi_mecab/compare/6e61f6229659942bba06ae201d66eaa49b8a5456...0.1.0)</small>
 
+### Features
+
+- 初版リリース。/mecab/のgetとpostを実装。 ([36d0a24](https://github.com/Kei198403/fastapi_mecab/commit/36d0a2402cdd2243f345619d6dec6f58c8759857) by Kei198403).
+
 ### Chore
 
 - fastapi起動環境構築 ([b07ddcf](https://github.com/Kei198403/fastapi_mecab/commit/b07ddcf3f5ae80a4b10d2d7ed09e7958c3043464) by Kei198403).

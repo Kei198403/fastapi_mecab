@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi-mecab"
-version = "0.1.0"
+version = "1.0.0"
 description = ""
 authors = ["Kei198403 <74121135+Kei198403@users.noreply.github.com>"]
 license = "MIT"
