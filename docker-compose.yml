@@ -1,0 +1,11 @@
+services:
+  fastapi_mecab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fastapi_mecab:latest
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      PORT: 8080
